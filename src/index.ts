@@ -1,5 +1,11 @@
-const myFunc = (num: number): number => {
-  return num * num;
-};
+import express from "express";
+import apiRoute from "./routes/api";
 
-export default myFunc;
+const app = express();
+
+app.use("/api", apiRoute);
+
+const port = 3000;
+app.listen(port, () => {
+  console.log(`server listen in ${port}`);
+});
